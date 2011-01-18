@@ -1,9 +1,11 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-require 'wrapper'
-require 'spec'
-require 'spec/autorun'
+require "rubygems"
+require "bundler/setup"
+require 'active_support/core_ext'
+require 'pry'
 
-Spec::Runner.configure do |config|
-  
+require 'wrapper'
+
+Dir.glob("spec/{models,presenters}/*").each { |file| require File.expand_path file }
+
+RSpec.configure do |config|
 end

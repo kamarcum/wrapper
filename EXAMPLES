@@ -1,0 +1,41 @@
+## ./app/presenters/person_presenter.rb
+class PersonPresenter
+  include Wrapper::Presenter
+
+  # Delegate to another presenter, will give you person.contact_email
+  delegate :email, to: :contact_presenter, prefix: :contact
+
+  def name
+    [first_name, last_name].join ' '
+  end
+
+  # Permanently override an method/attribute
+  def first_name
+    'Ingemar'
+  end
+
+  # Ideal pattern for JSON hashes
+  def as_json(*)
+    {
+      name: name,
+      age: age,
+      books: BooksPresenter.wrap books
+    }.as_json
+  end
+end
+
+## Wrapping resources for use in views
+class ArticlesController < ApplicationController
+  helper_method :articles, :article
+
+  ## whatever rocks your boat
+
+  protected
+  def articles
+    @articles ||= ArticlePresesnter.wrap Article.published
+  end
+
+  def article
+    @article ||= ArticlePresesnter.wrap Article.find(params[:id])
+  end
+end
