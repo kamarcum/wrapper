@@ -1,5 +1,7 @@
 ## wrapper
 
+[![Build Status](https://secure.travis-ci.org/ingemar/wrapper.png)](http://travis-ci.org/ingemar/wrapper)
+
 Wrapper is a minimalistic implementation of a presenter pattern for Rails.
 The goal  is to separate view logic from the model and avoid using the dreadful helper pattern.
 
