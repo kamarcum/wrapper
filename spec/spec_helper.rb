@@ -1,7 +1,6 @@
 require "rubygems"
 require "bundler/setup"
 require 'active_support/core_ext'
-require 'pry'
 
 require 'wrapper'
 
