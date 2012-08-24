@@ -53,6 +53,10 @@ module Wrapper # :nodoc:
     super || resource == other
   end
 
+  def as_json(*args)
+    resource.as_json(*args)
+  end
+
   ##
   # Check if an instance method is defined either in the presenter or for on
   # the +#resource+.

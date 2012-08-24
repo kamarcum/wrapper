@@ -48,6 +48,12 @@ describe Wrapper do
     end
   end
 
+  describe '#as_json' do
+    it 'delegates to the resource' do
+      subject.as_json.should eq article.as_json
+    end
+  end
+
   context 'presenter specific method' do
     it "uses methods defined in the presenter class" do
       subject.title.should eq "I was overwritten in the presenter"
