@@ -32,10 +32,10 @@ class ArticlesController < ApplicationController
 
   protected
   def articles
-    @articles ||= ArticlePresesnter.wrap Article.published
+    @articles ||= ArticlePresenter.wrap Article.published
   end
 
   def article
-    @article ||= ArticlePresesnter.wrap Article.find(params[:id])
+    @article ||= ArticlePresenter.wrap Article.find(params[:id])
   end
 end
