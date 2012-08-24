@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Wrapper::Presenter do
+describe Wrapper do
   let(:article) { Article.new(:title => 'I should not be seen!', :description => 'I will not be touched') }
   subject { ArticlePresenter.wrap(article) }
 

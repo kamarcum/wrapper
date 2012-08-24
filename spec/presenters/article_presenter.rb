@@ -1,5 +1,5 @@
 class ArticlePresenter
-  include Wrapper::Presenter
+  include Wrapper
 
   def title
     "I was overwritten in the presenter"

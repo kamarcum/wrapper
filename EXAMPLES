@@ -1,6 +1,6 @@
 ## ./app/presenters/person_presenter.rb
 class PersonPresenter
-  include Wrapper::Presenter
+  include Wrapper
 
   # Delegate to another presenter, will give you person.contact_email
   delegate :email, to: :contact_presenter, prefix: :contact
