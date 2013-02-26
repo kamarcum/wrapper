@@ -57,6 +57,10 @@ module Wrapper # :nodoc:
     resource.as_json(*args)
   end
 
+  def to_param
+    resource.to_param
+  end
+
   ##
   # Check if an instance method is defined either in the presenter or for on
   # the +#resource+.
