@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.files       = Dir.glob("lib/**/*") + %w[Gemfile wrapper.gemspec HISTORY README.md EXAMPLES LICENSE]
   s.test_files  = Dir.glob('spec/*')
 
-  s.add_runtime_dependency "rails", '~> 3.0'
+  s.add_runtime_dependency "rails", '>= 3.0'
   s.add_development_dependency 'rspec', '~> 2.0'
 end
 
